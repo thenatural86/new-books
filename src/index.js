@@ -15,11 +15,13 @@ const Booklist = () => {
   )
 }
 const Book = () => {
+  const title = 'Iron Flame (The Empyrean, 2)'
+  const author = 'Rebecca Yarros'
   return (
     <article className='book'>
-      <Image />
-      <Title />
-      <Author />
+      <img src='./images/book-1.jpg' />
+      <h2>{title}</h2>
+      <h4>{author.toUpperCase()}</h4>
     </article>
   )
 }
@@ -29,10 +31,6 @@ const inlineHeadingStyles = {
   fontSize: '0.75rem',
   marginTop: '0.5rem',
 }
-
-const Image = () => <img src='./images/book-1.jpg' />
-const Title = () => <h2>Iron Flame (The Empyrean, 2)</h2>
-const Author = () => <h4 style={inlineHeadingStyles}>Rebecca Yarros</h4>
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 
