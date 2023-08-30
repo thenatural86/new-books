@@ -3,35 +3,29 @@ import ReactDOM from 'react-dom/client'
 
 import './index.css'
 
-const Booklist = () => {
+const img = './images/book-1.jpg'
+const title = 'Iron Flame (The Empyrean, 2)'
+const author = 'Rebecca Yarros'
+
+const BookList = () => {
   return (
     <section className='booklist'>
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
+      <Book author={author} title={title} img={img} />
+      <Book author={author} title={title} img={img} />
     </section>
   )
 }
-const Book = () => {
-  const title = 'Iron Flame (The Empyrean, 2)'
-  const author = 'Rebecca Yarros'
+
+const Book = (props) => {
   return (
     <article className='book'>
-      <img src='./images/book-1.jpg' />
-      <h2>{title}</h2>
-      <h4>{author.toUpperCase()}</h4>
+      <img src={props.img} alt={props.img} />
+      <h2>{props.title}</h2>
+      <h4>{props.author}</h4>
     </article>
   )
 }
 
-const inlineHeadingStyles = {
-  color: '#617d98',
-  fontSize: '0.75rem',
-  marginTop: '0.5rem',
-}
-
 const root = ReactDOM.createRoot(document.getElementById('root'))
 
-root.render(<Booklist />)
+root.render(<BookList />)
