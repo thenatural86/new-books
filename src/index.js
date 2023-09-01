@@ -7,6 +7,7 @@ const books = [
     img: './images/book-1.jpg',
     title: 'Iron Flame (The Empyrean, 2)',
     author: 'Rebecca Yarros',
+    id: 1,
   },
 
   {
@@ -14,6 +15,7 @@ const books = [
     title:
       'The Four Agreements: A Practical Guide to Personal Freedom (A Toltec Wisdom Book)',
     author: 'Don Miguel Ruiz ',
+    id: 2,
   },
 ]
 
@@ -21,7 +23,11 @@ const BookList = () => {
   return (
     <section className='booklist'>
       {books.map((book) => {
-        return <Book {...book} />
+        return (
+          <div key={book.id}>
+            <Book {...book} />
+          </div>
+        )
       })}
     </section>
   )
