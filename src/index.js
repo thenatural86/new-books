@@ -18,8 +18,17 @@ const books = [
   },
 ]
 
-const handleClick = () => {
-  alert('yolo')
+const handleClick = (e) => {
+  console.log(e)
+}
+
+const handleChange = (e) => {
+  console.log(e)
+}
+
+const handleSubmit = (e) => {
+  e.preventDefault()
+  console.log(e)
 }
 
 const BookList = () => {
@@ -29,6 +38,16 @@ const BookList = () => {
         return (
           <div key={book.id}>
             <Book {...book} />
+            <form onSubmit={handleSubmit}>
+              <h2>Book Form</h2>
+              <input
+                type='text'
+                name='example'
+                onChange={handleChange}
+                style={{ margin: '1rem 0' }}
+              />
+              <button type='submit'>Submit Me</button>
+            </form>
             <button onClick={handleClick}>Yolo Me</button>
           </div>
         )
