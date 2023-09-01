@@ -12,12 +12,15 @@ const books = [
 
   {
     img: 'https://images-na.ssl-images-amazon.com/images/I/81hHy5XrdKL._AC_UL900_SR900,600_.jpg',
-    title:
-      'The Four Agreements: A Practical Guide to Personal Freedom (A Toltec Wisdom Book)',
+    title: 'The Four Agreements',
     author: 'Don Miguel Ruiz ',
     id: 2,
   },
 ]
+
+const handleClick = () => {
+  alert('yolo')
+}
 
 const BookList = () => {
   return (
@@ -26,6 +29,7 @@ const BookList = () => {
         return (
           <div key={book.id}>
             <Book {...book} />
+            <button onClick={handleClick}>Yolo Me</button>
           </div>
         )
       })}
